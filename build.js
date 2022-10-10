@@ -15,16 +15,15 @@ const options = {
 
 // Text + chalk definitions
 const data = {
-  name: chalk.white('           Tierney Cyren'),
-  handle: chalk.white('bitandbang'),
-  shorthandle: chalk.white('bnb'),
-  work: chalk.white('Staff Developer Advocate at Twilio'),
-  twitter: chalk.gray('https://twitter.com/') + chalk.cyan('bitandbang'),
-  npm: chalk.gray('https://npmjs.com/') + chalk.red('~bnb'),
-  github: chalk.gray('https://github.com/') + chalk.green('bnb'),
-  linkedin: chalk.gray('https://linkedin.com/in/') + chalk.blue('bitandbang'),
-  web: chalk.cyan('https://bnb.im'),
-  npx: chalk.red('npx') + ' ' + chalk.white('bitandbang'),
+  name: chalk.white('           Pablo Bangueses'),
+  handle: chalk.white('bng5'),
+  work: chalk.white('Software Developer at Element14 (https://www.e14.io/)'),
+  twitter: chalk.gray('https://twitter.com/') + chalk.cyan('bng5'),
+  npm: chalk.gray('https://npmjs.com/') + chalk.red('~bng5'),
+  github: chalk.gray('https://github.com/') + chalk.green('bng5'),
+  linkedin: chalk.gray('https://linkedin.com/in/') + chalk.blue('pablobngs'),
+  web: chalk.cyan('https://bng5.net/'),
+  npx: chalk.red('npx') + ' ' + chalk.white('@bng5/card'),
   labelWork: chalk.white.bold('    Work:'),
   labelTwitter: chalk.white.bold(' Twitter:'),
   labelnpm: chalk.white.bold('     npm:'),
@@ -36,7 +35,7 @@ const data = {
 
 // Actual strings we're going to output
 const newline = '\n'
-const heading = `${data.name} / ${data.handle} / ${data.shorthandle}`
+const heading = `${data.name} ${chalk.green('/')} ${data.handle}`
 const working = `${data.labelWork}  ${data.work}`
 const twittering = `${data.labelTwitter}  ${data.twitter}`
 const npming = `${data.labelnpm}  ${data.npm}`
@@ -46,14 +45,18 @@ const webing = `${data.labelWeb}  ${data.web}`
 const carding = `${data.labelCard}  ${data.npx}`
 
 // Put all our output together into a single variable so we can use boxen effectively
-const output = heading + // data.name + data.handle
-               newline + newline + // Add one whole blank line
-               working + newline + // data.labelWork + data.work
-               twittering + newline + // data.labelTwitter + data.twitter
-               npming + newline + // data.labelnpm + data.npm
-               githubing + newline + // data.labelGitHub + data.github
-               linkedining + newline + // data.labelLinkedIn + data.linkedin
-               webing + newline + newline + // data.labelWeb + data.web
-               carding // data.labelCard + data.npx
+const output = [
+  heading, // data.name + data.handle
+  '', // Add one whole blank line
+  working, // data.labelWork + data.work
+  twittering, // data.labelTwitter + data.twitter
+  npming, // data.labelnpm + data.npm
+  githubing, // data.labelGitHub + data.github
+  linkedining, // data.labelLinkedIn + data.linkedin
+  webing, // data.labelWeb + data.web
+  '',
+  carding, // data.labelCard + data.npx
+].join(newline);
 
+console.log(chalk.green(boxen(output, options)));
 fs.writeFileSync(path.join(__dirname, 'bin/output'), chalk.green(boxen(output, options)))

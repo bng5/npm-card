@@ -1,17 +1,18 @@
 {
-  "name": "bitandbang",
+  "name": "@bng5/card",
   "version": "2.1.1",
-  "description": "A personal card for Tierney Cyren (@bitandbang)",
-  "main": "/bin/card.js",
+  "description": "A personal card for Pablo Bangueses (@bng5)",
+  "main": "./bin/card.js",
   "bin": {
-    "bitandbang": "./bin/card.js"
+    "bng5card": "./bin/card.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bnb/bitandbang.git"
+    "url": "git+https://github.com/bng5/npm-card.git"
   },
-  "homepage": "https://bnb.im",
+  "homepage": "https://bng5.net/",
   "scripts": {
+    "start": "node bin/card.js",
     "prepublish": "npm run build",
     "build": "node build.js",
     "dev": "npm run build && node ./bin/card.js",
@@ -25,7 +26,7 @@
     "npx card",
     "business card"
   ],
-  "author": "Tierney Cyren <hello@bnb.im> (http://bnb.im)",
+  "author": "Pablo Bangueses <pablo@bng5.net> (http://bng5.net)",
   "license": "MIT",
   "files": [
     "bin/card.js",
@@ -37,7 +38,7 @@
     "standard": "^12.0.1"
   },
   "bugs": {
-    "url": "https://github.com/bnb/bitandbang/issues"
+    "url": "https://github.com/bng5/npm-card/issues"
   },
   "dependencies": {}
 }
